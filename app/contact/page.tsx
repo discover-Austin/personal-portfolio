@@ -55,7 +55,7 @@ export default function Contact() {
             Get In Touch
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Have a question or want to work together? I'd love to hear from you!
+            Have a question or want to work together? I&apos;d love to hear from you!
           </p>
         </div>
 
@@ -231,7 +231,7 @@ export default function Contact() {
 
                 {status === 'success' && (
                   <div className="p-4 bg-green-100 dark:bg-green-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 rounded-lg">
-                    Thank you for your message! I'll get back to you soon.
+                    Thank you for your message! I&apos;ll get back to you soon.
                   </div>
                 )}
 

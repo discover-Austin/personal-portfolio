@@ -18,12 +18,12 @@ export default function About() {
         <div className="mb-16 bg-white dark:bg-slate-800 rounded-lg p-8 shadow-md border border-gray-200 dark:border-slate-700">
           <div className="prose dark:prose-invert max-w-none">
             <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-              Hello! I'm Austin
+              Hello! I&apos;m Austin
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              I'm a full-stack developer with a passion for building beautiful, 
+              I&apos;m a full-stack developer with a passion for building beautiful, 
               functional, and user-centered digital experiences. With several years 
-              of experience in web development, I've worked on a diverse range of 
+              of experience in web development, I&apos;ve worked on a diverse range of 
               projects from small business websites to large-scale web applications.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -34,7 +34,7 @@ export default function About() {
               technologies and best practices.
             </p>
             <p className="text-gray-700 dark:text-gray-300">
-              When I'm not coding, you can find me exploring new technologies, 
+              When I&apos;m not coding, you can find me exploring new technologies, 
               contributing to open-source projects, or sharing my knowledge through 
               technical writing and mentoring.
             </p>

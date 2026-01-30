@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
@@ -67,7 +68,7 @@ export default function Portfolio() {
             My Projects
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A collection of projects I've worked on, showcasing my skills and experience
+            A collection of projects I&apos;ve worked on, showcasing my skills and experience
           </p>
         </div>
 
@@ -79,10 +80,11 @@ export default function Portfolio() {
               className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-slate-700 hover:shadow-xl transition-shadow"
             >
               <div className="relative h-48 bg-gray-200 dark:bg-slate-700">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="p-6">

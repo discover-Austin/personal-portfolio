@@ -9,7 +9,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white">
-              Hi, I'm <span className="text-primary-600 dark:text-primary-400">Austin</span>
+              Hi, I&apos;m <span className="text-primary-600 dark:text-primary-400">Austin</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
               Full Stack Developer & Creative Problem Solver
@@ -70,10 +70,10 @@ export default function Home() {
       <section className="py-20 px-4 md:px-8 lg:px-16 bg-primary-600 dark:bg-primary-700">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-lg text-primary-100 mb-8">
-            I'm always interested in hearing about new projects and opportunities.
+            I&apos;m always interested in hearing about new projects and opportunities.
           </p>
           <Link 
             href="/contact"
