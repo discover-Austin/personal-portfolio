@@ -94,10 +94,10 @@ export default function Contact() {
                       Phone
                     </h3>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+12345678900"
                       className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                     >
-                      +1 (234) 567-890
+                      +1 (234) 567-8900
                     </a>
                   </div>
                 </div>
@@ -230,13 +230,19 @@ export default function Contact() {
                 </button>
 
                 {status === 'success' && (
-                  <div className="p-4 bg-green-100 dark:bg-green-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 rounded-lg">
+                  <div 
+                    role="alert"
+                    className="p-4 bg-green-100 dark:bg-green-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 rounded-lg"
+                  >
                     Thank you for your message! I&apos;ll get back to you soon.
                   </div>
                 )}
 
                 {status === 'error' && (
-                  <div className="p-4 bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 rounded-lg">
+                  <div 
+                    role="alert"
+                    className="p-4 bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 rounded-lg"
+                  >
                     Sorry, something went wrong. Please try again or email me directly.
                   </div>
                 )}

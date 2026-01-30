@@ -52,6 +52,7 @@ export default function Footer() {
               Connect
             </h3>
             <div className="flex gap-4">
+              {/* TODO: Update these links with your actual social media profiles */}
               <a 
                 href="https://github.com" 
                 target="_blank" 
