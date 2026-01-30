@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'
 
 export default function Footer() {
@@ -24,24 +25,24 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/about" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                <Link href="/about" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   About Me
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/portfolio" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                <Link href="/portfolio" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/blog" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                <Link href="/blog" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                <Link href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
