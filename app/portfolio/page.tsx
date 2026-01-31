@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce platform with payment integration, product management, and order tracking.',
+    description: 'End-to-end commerce solution featuring Stripe-powered payments, real-time inventory management, and a streamlined order fulfillment pipeline.',
     technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
     image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop',
     github: 'https://github.com',
@@ -14,7 +14,7 @@ const projects = [
   {
     id: 2,
     title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team collaboration features.',
+    description: 'Real-time collaborative workspace with live updates via WebSockets, granular permissions, and intuitive drag-and-drop workflow orchestration.',
     technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop',
     github: 'https://github.com',
@@ -23,7 +23,7 @@ const projects = [
   {
     id: 3,
     title: 'Weather Dashboard',
-    description: 'A weather dashboard that provides real-time weather information and forecasts for multiple locations.',
+    description: 'Precision weather intelligence platform delivering real-time conditions, multi-day forecasts, and interactive radar overlays for any location worldwide.',
     technologies: ['React', 'TypeScript', 'Weather API', 'Tailwind CSS'],
     image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=500&fit=crop',
     github: 'https://github.com',
@@ -32,7 +32,7 @@ const projects = [
   {
     id: 4,
     title: 'Social Media Dashboard',
-    description: 'An analytics dashboard for managing multiple social media accounts with engagement metrics.',
+    description: 'Unified analytics command center for multi-platform social accounts, featuring engagement heatmaps, audience insights, and automated reporting.',
     technologies: ['Next.js', 'Python', 'FastAPI', 'Chart.js'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
     github: 'https://github.com',
@@ -41,7 +41,7 @@ const projects = [
   {
     id: 5,
     title: 'Blog Platform',
-    description: 'A modern blog platform with Markdown support, commenting system, and SEO optimization.',
+    description: 'High-performance publishing engine with Markdown authoring, threaded discussions, and built-in SEO optimization for maximum organic reach.',
     technologies: ['Next.js', 'MDX', 'Tailwind CSS', 'Vercel'],
     image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=500&fit=crop',
     github: 'https://github.com',
@@ -50,7 +50,7 @@ const projects = [
   {
     id: 6,
     title: 'Portfolio Generator',
-    description: 'A tool that helps developers create beautiful portfolio websites with customizable templates.',
+    description: 'Developer-focused site builder that transforms configuration into polished, deployment-ready portfolio sites with fully customizable templates.',
     technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=500&fit=crop',
     github: 'https://github.com',
@@ -65,10 +65,10 @@ export default function Portfolio() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            My Projects
+            Selected Work
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A collection of projects I&apos;ve worked on, showcasing my skills and experience
+            A curated selection of projects that reflect my commitment to quality engineering and purposeful design
           </p>
         </div>
 
