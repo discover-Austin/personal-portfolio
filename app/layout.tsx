@@ -5,8 +5,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Personal Portfolio',
-  description: 'A modern personal portfolio website built with Next.js and Tailwind CSS',
+  title: 'Austin | Full Stack Engineer',
+  description: 'Full stack engineer based in Indianapolis, Indiana — building refined, high-performance digital products.',
 }
 
 export default function RootLayout({
