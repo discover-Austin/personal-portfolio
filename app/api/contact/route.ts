@@ -53,6 +53,12 @@ function validateField(value: string, minLength: number, maxLength: number): boo
   return value.length >= minLength && value.length <= maxLength
 }
 
+// Helper function to sanitize email headers to prevent injection
+function sanitizeEmailHeader(value: string): string {
+  // Remove all control characters including newlines, carriage returns, null bytes
+  return value.replace(/[\r\n\x00]/g, '').trim()
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Parse request body
@@ -148,10 +154,13 @@ User Agent: ${userAgent}
 
     // Send email via Resend
     try {
+      // Sanitize subject to prevent email header injection
+      const sanitizedSubject = sanitizeEmailHeader(subject)
+
       await resend.emails.send({
         from: fromEmail,
         to: toEmail,
-        subject: `[Portfolio Lead] ${subject}`,
+        subject: `[Portfolio Lead] ${sanitizedSubject}`,
         text: emailText,
       })
 

@@ -9,10 +9,11 @@ A modern, responsive personal portfolio website built with Next.js 14, TypeScrip
 - 📱 **Fully Responsive** - Optimized for all screen sizes
 - 📝 **Blog System** - Markdown-based blog with syntax highlighting
 - 💼 **Portfolio Showcase** - Display your projects with details
-- 📧 **Contact Form** - Functional contact form with validation
-- ⚡ **Fast Performance** - Built with Next.js 14 for optimal speed
-- 🔍 **SEO Friendly** - Optimized for search engines
+- 📧 **Contact Form** - Production-ready contact form with email via Resend
+- ⚡ **Fast Performance** - Built with Next.js 15 for optimal speed
+- 🔍 **SEO Friendly** - Optimized for search engines with metadata and sitemap
 - 🎯 **TypeScript** - Type-safe code for better development experience
+- 🛡️ **Security** - Honeypot spam protection and rate limiting
 
 ## Pages
 
@@ -24,11 +25,12 @@ A modern, responsive personal portfolio website built with Next.js 14, TypeScrip
 
 ## Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
+- **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Icons:** React Icons
 - **Markdown:** Gray Matter + Marked
+- **Email:** Resend
 - **Deployment:** Vercel (recommended)
 
 ## Getting Started
@@ -55,7 +57,17 @@ yarn install
 pnpm install
 ```
 
-3. Run the development server:
+3. Configure environment variables:
+```bash
+cp .env.example .env.local
+```
+Edit `.env.local` with your configuration:
+- `RESEND_API_KEY` - Your Resend API key from https://resend.com
+- `CONTACT_TO_EMAIL` - Where contact form emails should be sent
+- `CONTACT_FROM_EMAIL` - Verified sender email in Resend
+- `NEXT_PUBLIC_SITE_URL` - Your site URL for SEO
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
@@ -64,20 +76,24 @@ yarn dev
 pnpm dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 ## Project Structure
 
 ```
 personal-portfolio/
-├── app/                    # Next.js App Router pages
+├── app/                    # Next.js App Router
 │   ├── about/             # About page
+│   ├── api/               # API routes
+│   │   └── contact/       # Contact form API endpoint
 │   ├── blog/              # Blog listing and posts
 │   │   └── [slug]/        # Dynamic blog post pages
 │   ├── contact/           # Contact page
 │   ├── portfolio/         # Portfolio showcase
+│   ├── robots.ts          # Robots.txt configuration
+│   ├── sitemap.ts         # Sitemap configuration
 │   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout with navbar/footer
+│   ├── layout.tsx         # Root layout with SEO metadata
 │   └── page.tsx           # Home page
 ├── components/            # React components
 │   ├── Footer.tsx         # Footer component
@@ -87,10 +103,8 @@ personal-portfolio/
 │   └── blog/             # Markdown blog posts
 ├── lib/                  # Utility functions
 │   └── blog.ts           # Blog post utilities
-├── pages/                # Pages Router (for API routes)
-│   └── api/              # API routes
-│       └── contact.ts    # Contact form endpoint
 ├── public/               # Static files
+├── .env.example          # Environment variables template
 ├── next.config.js        # Next.js configuration
 ├── tailwind.config.js    # Tailwind CSS configuration
 ├── tsconfig.json         # TypeScript configuration
@@ -122,15 +136,31 @@ personal-portfolio/
 
 ### Contact Form
 
-The contact form currently logs submissions to the console. To make it fully functional:
+The contact form is production-ready and uses [Resend](https://resend.com) to send emails:
 
-1. **Add an email service:**
-   - Install a service like SendGrid, Mailgun, or Resend
-   - Update `pages/api/contact.ts` to send emails
+**Features:**
+- ✅ Field validation (name 2-80 chars, email format, subject 2-120 chars, message 10-5000 chars)
+- ✅ Honeypot spam protection (hidden field to catch bots)
+- ✅ Rate limiting (5 requests per 10 minutes per IP address)
+- ✅ Email notifications with contact details, timestamp, IP, and user agent
+- ✅ Clean success/error status messages
 
-2. **Or save to a database:**
-   - Set up a database (PostgreSQL, MongoDB, etc.)
-   - Update the API route to save submissions
+**Setup:**
+1. Sign up for a free account at [Resend](https://resend.com)
+2. Verify your domain or use their test domain
+3. Get your API key from the dashboard
+4. Add environment variables to `.env.local`:
+   ```env
+   RESEND_API_KEY=re_your_api_key_here
+   CONTACT_TO_EMAIL=your.email@example.com
+   CONTACT_FROM_EMAIL=noreply@yourdomain.com
+   ```
+5. Test the form - submissions will be sent to your email!
+
+**API Endpoint:** `/api/contact`
+- Method: `POST`
+- Body: `{ name, email, subject, message }`
+- Returns: `{ ok: true }` or `{ ok: false, error: "..." }`
 
 ## Building for Production
 
@@ -160,8 +190,13 @@ The easiest way to deploy is using [Vercel](https://vercel.com):
 
 1. Push your code to GitHub
 2. Import your repository on Vercel
-3. Vercel will automatically detect Next.js and configure the build
-4. Your site will be deployed with a production URL
+3. Add environment variables in project settings:
+   - `RESEND_API_KEY`
+   - `CONTACT_TO_EMAIL`
+   - `CONTACT_FROM_EMAIL`
+   - `NEXT_PUBLIC_SITE_URL`
+4. Vercel will automatically detect Next.js and configure the build
+5. Your site will be deployed with a production URL
 
 ### Other Platforms
 
@@ -179,14 +214,25 @@ You can also deploy to:
 
 ## Environment Variables
 
-Create a `.env.local` file for environment-specific variables:
+Create a `.env.local` file based on `.env.example`:
 
 ```env
-# Add your environment variables here
-# Example for email service:
-# SENDGRID_API_KEY=your_api_key
-# EMAIL_FROM=your@email.com
+# Resend API Configuration
+RESEND_API_KEY=re_your_api_key_here
+CONTACT_TO_EMAIL=your.email@example.com
+CONTACT_FROM_EMAIL=noreply@yourdomain.com
+
+# Site Configuration (for SEO)
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 ```
+
+**Required for contact form:**
+- `RESEND_API_KEY` - Get from https://resend.com/api-keys
+- `CONTACT_TO_EMAIL` - Where form submissions are sent
+- `CONTACT_FROM_EMAIL` - Must be verified in Resend
+
+**Optional for production:**
+- `NEXT_PUBLIC_SITE_URL` - Used in sitemap.xml and robots.txt (defaults to localhost)
 
 ## License
 
