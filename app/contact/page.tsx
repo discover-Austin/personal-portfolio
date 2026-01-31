@@ -52,10 +52,10 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Get In Touch
+            Let&apos;s Talk
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Have a question or want to work together? I&apos;d love to hear from you!
+            Have a project in mind or an opportunity to discuss? I&apos;d welcome the conversation.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function Contact() {
           <div className="lg:col-span-1">
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-slate-700">
               <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-                Contact Information
+                Direct Channels
               </h2>
 
               <div className="space-y-6">
@@ -77,10 +77,10 @@ export default function Contact() {
                       Email
                     </h3>
                     <a
-                      href="mailto:hello@example.com"
+                      href="mailto:built.to.cell@gmail.com"
                       className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                     >
-                      hello@example.com
+                      built.to.cell@gmail.com
                     </a>
                   </div>
                 </div>
@@ -94,10 +94,10 @@ export default function Contact() {
                       Phone
                     </h3>
                     <a
-                      href="tel:+12345678900"
+                      href="tel:+13176431578"
                       className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                     >
-                      +1 (234) 567-8900
+                      +1 (317) 643-1578
                     </a>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Contact() {
                       Location
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Austin, Texas, USA
+                      Indianapolis, Indiana
                     </p>
                   </div>
                 </div>
@@ -119,10 +119,10 @@ export default function Contact() {
 
               <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-700">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-                  Response Time
+                  Availability
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  I typically respond within 24-48 hours during business days.
+                  I typically respond within 24 hours on business days. For urgent inquiries, reach out by phone.
                 </p>
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function Contact() {
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-slate-700">
               <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-                Send Me a Message
+                Send a Message
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -171,7 +171,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
-                      placeholder="your.email@example.com"
+                      placeholder="you@company.com"
                     />
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
-                    placeholder="What's this about?"
+                    placeholder="Project inquiry, collaboration, etc."
                   />
                 </div>
 
@@ -210,7 +210,7 @@ export default function Contact() {
                     required
                     rows={6}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white resize-none"
-                    placeholder="Tell me about your project or question..."
+                    placeholder="Tell me about your project, timeline, and goals..."
                   />
                 </div>
 
@@ -230,20 +230,20 @@ export default function Contact() {
                 </button>
 
                 {status === 'success' && (
-                  <div 
+                  <div
                     role="alert"
                     className="p-4 bg-green-100 dark:bg-green-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 rounded-lg"
                   >
-                    Thank you for your message! I&apos;ll get back to you soon.
+                    Message received. I&apos;ll be in touch shortly.
                   </div>
                 )}
 
                 {status === 'error' && (
-                  <div 
+                  <div
                     role="alert"
                     className="p-4 bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 rounded-lg"
                   >
-                    Sorry, something went wrong. Please try again or email me directly.
+                    Something went wrong. Please try again or reach out directly at built.to.cell@gmail.com.
                   </div>
                 )}
               </form>

@@ -11,10 +11,10 @@ export default function Footer() {
           {/* About */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              About
+              Austin
             </h3>
             <p className="text-gray-600 dark:text-gray-400">
-              A passionate developer creating modern web experiences with cutting-edge technologies.
+              Full stack engineer in Indianapolis, Indiana &mdash; building refined digital products with precision and purpose.
             </p>
           </div>
 
@@ -26,12 +26,12 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                  About Me
+                  About
                 </Link>
               </li>
               <li>
                 <Link href="/portfolio" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                  Projects
+                  Work
                 </Link>
               </li>
               <li>
@@ -53,36 +53,35 @@ export default function Footer() {
               Connect
             </h3>
             <div className="flex gap-4">
-              {/* TODO: Update these links with your actual social media profiles */}
-              <a 
-                href="https://github.com" 
-                target="_blank" 
+              <a
+                href="https://github.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub size={24} />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={24} />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
+              <a
+                href="https://twitter.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="Twitter"
               >
                 <FaTwitter size={24} />
               </a>
-              <a 
-                href="mailto:hello@example.com"
+              <a
+                href="mailto:built.to.cell@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="Email"
               >
@@ -94,7 +93,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-800">
           <p className="text-center text-gray-600 dark:text-gray-400">
-            © {currentYear} Austin. All rights reserved.
+            &copy; {currentYear} Austin. All rights reserved.
           </p>
         </div>
       </div>
