@@ -60,68 +60,72 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <div className="py-20 px-4 md:px-8 lg:px-16">
+    <div className="py-24 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+        <div className="text-center mb-20">
+          <p className="text-sm font-medium tracking-widest uppercase text-primary-600 dark:text-primary-400 mb-3">
+            Portfolio
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">
             Selected Work
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             A curated selection of projects that reflect my commitment to quality engineering and purposeful design
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-slate-700 hover:shadow-xl transition-shadow"
+              className="group bg-white dark:bg-slate-800/50 rounded-2xl shadow-sm overflow-hidden border border-gray-100 dark:border-slate-700/50 hover:shadow-lg transition-all hover:-translate-y-1"
             >
-              <div className="relative h-48 bg-gray-200 dark:bg-slate-700">
+              <div className="relative h-48 bg-gray-100 dark:bg-slate-700 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white tracking-tight">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 mb-5">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded text-sm"
+                      className="px-2.5 py-1 bg-gray-50 dark:bg-slate-700/50 text-gray-600 dark:text-gray-300 rounded-lg text-xs font-medium border border-gray-100 dark:border-slate-600/50"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 pt-4 border-t border-gray-100 dark:border-slate-700/50">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    className="flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    <FaGithub size={20} />
-                    <span>Code</span>
+                    <FaGithub size={16} />
+                    Code
                   </a>
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    className="flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
-                    <FaExternalLinkAlt size={18} />
-                    <span>Demo</span>
+                    <FaExternalLinkAlt size={14} />
+                    Demo
                   </a>
                 </div>
               </div>

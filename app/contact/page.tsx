@@ -47,14 +47,17 @@ export default function Contact() {
   }
 
   return (
-    <div className="py-20 px-4 md:px-8 lg:px-16">
+    <div className="py-24 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+        <div className="text-center mb-20">
+          <p className="text-sm font-medium tracking-widest uppercase text-primary-600 dark:text-primary-400 mb-3">
+            Reach Out
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">
             Let&apos;s Talk
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Have a project in mind or an opportunity to discuss? I&apos;d welcome the conversation.
           </p>
         </div>
@@ -62,66 +65,62 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-slate-700">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-sm p-6 border border-gray-100 dark:border-slate-700/50">
+              <h2 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white tracking-tight">
                 Direct Channels
               </h2>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="text-primary-600 dark:text-primary-400 mt-1">
-                    <FaEnvelope size={24} />
+                {[
+                  {
+                    icon: FaEnvelope,
+                    label: 'Email',
+                    value: 'built.to.cell@gmail.com',
+                    href: 'mailto:built.to.cell@gmail.com',
+                  },
+                  {
+                    icon: FaPhone,
+                    label: 'Phone',
+                    value: '+1 (317) 643-1578',
+                    href: 'tel:+13176431578',
+                  },
+                  {
+                    icon: FaMapMarkerAlt,
+                    label: 'Location',
+                    value: 'Indianapolis, Indiana',
+                    href: null,
+                  },
+                ].map((channel) => (
+                  <div key={channel.label} className="flex items-start gap-4">
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex-shrink-0">
+                      <channel.icon size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium tracking-wider uppercase text-gray-400 dark:text-gray-500 mb-0.5">
+                        {channel.label}
+                      </p>
+                      {channel.href ? (
+                        <a
+                          href={channel.href}
+                          className="text-sm text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        >
+                          {channel.value}
+                        </a>
+                      ) : (
+                        <p className="text-sm text-gray-700 dark:text-gray-300">
+                          {channel.value}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      Email
-                    </h3>
-                    <a
-                      href="mailto:built.to.cell@gmail.com"
-                      className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    >
-                      built.to.cell@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="text-primary-600 dark:text-primary-400 mt-1">
-                    <FaPhone size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      Phone
-                    </h3>
-                    <a
-                      href="tel:+13176431578"
-                      className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    >
-                      +1 (317) 643-1578
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="text-primary-600 dark:text-primary-400 mt-1">
-                    <FaMapMarkerAlt size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      Location
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      Indianapolis, Indiana
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-700">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+              <div className="mt-8 pt-6 border-t border-gray-100 dark:border-slate-700/50">
+                <p className="text-xs font-medium tracking-wider uppercase text-gray-400 dark:text-gray-500 mb-2">
                   Availability
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                   I typically respond within 24 hours on business days. For urgent inquiries, reach out by phone.
                 </p>
               </div>
@@ -130,19 +129,19 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-slate-700">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+            <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-sm p-8 border border-gray-100 dark:border-slate-700/50">
+              <h2 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white tracking-tight">
                 Send a Message
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-xs font-medium tracking-wider uppercase text-gray-500 dark:text-gray-400 mb-2"
                     >
-                      Name *
+                      Name
                     </label>
                     <input
                       type="text"
@@ -151,7 +150,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-2.5 border border-gray-200 dark:border-slate-600/50 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-500 bg-gray-50 dark:bg-slate-700/50 text-gray-900 dark:text-white text-sm transition-colors"
                       placeholder="Your name"
                     />
                   </div>
@@ -159,9 +158,9 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-xs font-medium tracking-wider uppercase text-gray-500 dark:text-gray-400 mb-2"
                     >
-                      Email *
+                      Email
                     </label>
                     <input
                       type="email"
@@ -170,7 +169,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-2.5 border border-gray-200 dark:border-slate-600/50 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-500 bg-gray-50 dark:bg-slate-700/50 text-gray-900 dark:text-white text-sm transition-colors"
                       placeholder="you@company.com"
                     />
                   </div>
@@ -179,9 +178,9 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-xs font-medium tracking-wider uppercase text-gray-500 dark:text-gray-400 mb-2"
                   >
-                    Subject *
+                    Subject
                   </label>
                   <input
                     type="text"
@@ -190,7 +189,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                    className="w-full px-4 py-2.5 border border-gray-200 dark:border-slate-600/50 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-500 bg-gray-50 dark:bg-slate-700/50 text-gray-900 dark:text-white text-sm transition-colors"
                     placeholder="Project inquiry, collaboration, etc."
                   />
                 </div>
@@ -198,9 +197,9 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-xs font-medium tracking-wider uppercase text-gray-500 dark:text-gray-400 mb-2"
                   >
-                    Message *
+                    Message
                   </label>
                   <textarea
                     id="message"
@@ -209,7 +208,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white resize-none"
+                    className="w-full px-4 py-2.5 border border-gray-200 dark:border-slate-600/50 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-500 bg-gray-50 dark:bg-slate-700/50 text-gray-900 dark:text-white text-sm resize-none transition-colors"
                     placeholder="Tell me about your project, timeline, and goals..."
                   />
                 </div>
@@ -217,13 +216,13 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center gap-2"
+                  className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 dark:disabled:bg-slate-600 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all inline-flex items-center justify-center gap-2 shadow-lg shadow-primary-600/25 hover:shadow-xl hover:shadow-primary-600/30 disabled:shadow-none"
                 >
                   {status === 'submitting' ? (
                     'Sending...'
                   ) : (
                     <>
-                      <FaPaperPlane />
+                      <FaPaperPlane size={14} />
                       Send Message
                     </>
                   )}
@@ -232,7 +231,7 @@ export default function Contact() {
                 {status === 'success' && (
                   <div
                     role="alert"
-                    className="p-4 bg-green-100 dark:bg-green-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 rounded-lg"
+                    className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 text-green-700 dark:text-green-300 rounded-xl text-sm"
                   >
                     Message received. I&apos;ll be in touch shortly.
                   </div>
@@ -241,7 +240,7 @@ export default function Contact() {
                 {status === 'error' && (
                   <div
                     role="alert"
-                    className="p-4 bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 rounded-lg"
+                    className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/50 text-red-700 dark:text-red-300 rounded-xl text-sm"
                   >
                     Something went wrong. Please try again or reach out directly at built.to.cell@gmail.com.
                   </div>
