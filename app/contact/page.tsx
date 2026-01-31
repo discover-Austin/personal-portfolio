@@ -9,6 +9,7 @@ export default function Contact() {
     email: '',
     subject: '',
     message: '',
+    company: '', // Honeypot field
   })
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
@@ -27,7 +28,7 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '', subject: '', message: '' })
+        setFormData({ name: '', email: '', subject: '', message: '', company: '' })
         setTimeout(() => setStatus('idle'), 5000)
       } else {
         setStatus('error')
@@ -211,6 +212,20 @@ export default function Contact() {
                     rows={6}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white resize-none"
                     placeholder="Tell me about your project or question..."
+                  />
+                </div>
+
+                {/* Honeypot field - hidden from users */}
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
                   />
                 </div>
 
