@@ -190,18 +190,12 @@ Create a `.env.local` file for environment-specific variables:
 
 ## License
 
-MIT License - feel free to use this project for your own portfolio!
+MIT License
 
-## Acknowledgments
+## Built With
 
-- Built with [Next.js](https://nextjs.org/)
-- Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Icons from [React Icons](https://react-icons.github.io/react-icons/)
-
-## Support
-
-If you have any questions or issues, please open an issue on GitHub.
-
----
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
 
 Made with ❤️ by Austin
